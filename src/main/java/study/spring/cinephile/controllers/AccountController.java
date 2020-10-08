@@ -128,9 +128,7 @@ public class AccountController {
 		try {
 			//인증코드, 메일 임시 테이블에 저장
 			tcodesService.addCode(input);
-			
-			//mailHelper.sendMail(user_email, subject, content);
-			
+			mailHelper.sendMail(user_email, subject, content);
 		} catch (Exception e) {
 			e.printStackTrace();
 			return webHelper.redirect(null, "메일 발송에 실패했습니다.");
@@ -138,8 +136,6 @@ public class AccountController {
 		
 		int Pk;
 		Pk = input.getId_code();
-		System.out.println(input.toString());
-		System.out.println("셍썽된 프라이뭐리"+Pk);
 		
 		Cookie cookie = new Cookie("codePk", String.valueOf(Pk)); //저장할 쿠키 객체 생성. //쿠키에는 텍스트 정보만 담을수 있다.
 		
@@ -153,24 +149,6 @@ public class AccountController {
 		}
 		
 		response.addCookie(cookie); //쿠키 저장
-//		model.addAttribute("user_email", user_email);
-		
-		
-		
-		
-		//알림발송 (webHelper를 안쓰고) 실제로 쓰일 코드
-//		PrintWriter out=response.getWriter();
-//		
-//		response.setContentType("text/html; charset=utf-8");
-//		out.println("<script language='javascript'>");
-//		out.println("alert('인증번호를 발송하였습니다.')");
-//		out.println("</script>");
-//		out.flush();
-//		System.out.println(content);
-//		/* 결과처리 */
-//		return new ModelAndView("/account/03-emailCode");
-		
-		//결과처리
 		return webHelper.redirect(contextPath + "/account/03-emailCode.do?user_email="+user_email, "인증코드를 발송하였습니다." + content);
 		
 	}
@@ -257,10 +235,10 @@ public class AccountController {
 		if(user_name.equals(""))		{return webHelper.redirect(null, "이름을 입력하세요."); }
 		if(!regexHelper.isKor(user_name))		{return webHelper.redirect(null, "이름은 한글만 입력 가능합니다."); }
 		System.out.println("컨트롤뤄 실행 2-1");
-//		if(birthdate.equals(""))		{return webHelper.redirect(null, "생년월일을 입력하세요."); }
-//		if(gender.equals(""))		{return webHelper.redirect(null, "성별을 체크해 주세요."); }
-//		if(phone.equals(""))		{return webHelper.redirect(null, "전화번호를 입력해주세요."); }
-//		if(postcode.equals(""))		{return webHelper.redirect(null, "우편번호를 선택해주세요."); }
+		if(birthdate.equals(""))		{return webHelper.redirect(null, "생년월일을 입력하세요."); }
+		if(gender.equals(""))		{return webHelper.redirect(null, "성별을 체크해 주세요."); }
+		if(phone.equals(""))		{return webHelper.redirect(null, "전화번호를 입력해주세요."); }
+		if(postcode.equals(""))		{return webHelper.redirect(null, "우편번호를 선택해주세요."); }
 		
 		System.out.println("컨트롤뤄 실행2 ");
 		
@@ -297,10 +275,8 @@ public class AccountController {
 		/* 3)결과를 확인하기 위한 JSON 출력 */
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("item", output);
-		System.out.println("컨트롤뤄 실행 5");
+
 		
-		//return new ModelAndView("account/06-Complete");
-		//return webHelper.redirect("account/06-Complete", null);
 		String redirectUrl = contextPath + "/account/06-Complete.do?members_id=" + input.getMembers_id();
 		return webHelper.redirect(redirectUrl, null);
 	}
