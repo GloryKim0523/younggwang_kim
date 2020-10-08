@@ -1,0 +1,313 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
+
+/* 글씨체 나눔고딕 */
+#content {
+	font-family: 'Nanum Gothic', sans-serif;
+}
+
+/* 예매하기 박스 전체 */
+.booking_page {
+	width: 100%;
+	height: 900px;
+	padding-top: 50px;
+	padding-left: 5px;
+}
+
+/* 예매단계 안내박스 */
+.booking_stage1 {	
+	width: 80px;
+	float: left;
+	border-right: 1px solid white;
+}
+
+.booking_stage1 li {
+	display: block;
+	height: 200px;
+	text-align: center;
+	border-bottom: 1px solid black;
+	padding-top: 80px;
+}
+
+.booking_stage1 li:hover {
+	cursor: default;
+}
+
+.booking_stage1 li:first-child {
+	background-color:#4d4d4d;
+	color: white;
+	font-weight: bold;
+}
+
+/* 각 박스 타이틀 */
+.booking_title {
+	text-align: center;
+	font-size: 18px;
+	font-weight: bold;
+	border-bottom: 1px solid black;
+	border-right: 1px solid white;
+	height: 60px;
+	padding-top: 15px;
+	background-color: #4d4d4d;
+	color: white;
+}
+
+.booking_title:hover {
+	cursor: default;
+}
+
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+
+/* 영화관 선택 */
+.booking_branch {
+	width: 380px;
+	float: left;
+}
+
+/* 스크롤 위치 설정 */
+.fakeScroll__bar {
+	right: 8px !important;
+}
+
+/* 지역 선택 */
+.choose_provincial {
+	width: 130px;
+	height: 740px;
+	float:left;
+	background-color: #eee;
+}
+.choose_provincial li {
+	display: block;
+	height: 50px;
+	padding-left: 10px;
+	padding-top: 15px;
+	font-weight: bold;
+}
+
+.choose_provincial li:hover {
+	cursor: pointer;
+	color: #b0b0b0;
+}
+
+/* 지점 선택 */
+.choose_branch {
+	position: relative;
+	width: 240px;
+	height: 740px;
+	padding-top: 15px;
+	float:left;
+}
+
+.choose_branch li {
+	display: block;
+	height: 30px;
+	font-size: 14px;
+}
+
+.choose_branch li:hover {
+	cursor: pointer;
+	font-weight: bold;
+}
+
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+
+/* 영화 선택 */
+.booking_film {
+	width: 320px;
+	height: 800px;
+	float: left;
+}
+
+.choose_film {
+	height: 740px;
+	background-color: #eee;
+	padding-top: 15px;
+}
+
+.choose_film li {
+	display: block;
+	height: 50px;
+	font-size: 15px;
+	padding-top: 12px;
+}
+
+.choose_film li:hover {
+	cursor: pointer;
+	font-weight: bold;
+}
+
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+
+/* 날짜, 시간 선택 */
+.booking_time {
+	width: 410px;
+	height: 800px;
+	float: left;
+}
+
+/* 날짜 선택 */
+.choose_day {
+	width: 410px;
+	height:80px;
+	margin-top: 10px;
+}
+
+.weekday {
+	text-align: center;
+	color: black;
+}
+
+.weekday:hover {
+	color: black;
+	font-weight: bold;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+/* 각종 버튼 효과 삭제 */
+
+.slick-slide:focus, .slick-center:focus, .slick-track:focus, .slick-active:focus, .slick-current:focus, .slick-arrow:focus {
+   border: none;
+   outline: none;
+   box-shadow: none;
+}
+
+.btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn.active.focus {
+	outline: none !important;
+	box-shadow: none;
+}
+
+.choose_day > a.slick-arrow:active, .choose_day > a.slick-arrow:focus {
+	box-shadow: none !important;
+}
+
+a.weekday:active, a.weekday:link, a.weekday:visited, a.weekday:focus {
+	text-decoration: none;
+	color: black;
+}
+
+a:focus {
+	outline: none !important;
+}
+
+/* float 마감제 */
+.choose_day:after {
+	content: '';
+	display: block;
+	float:none;
+	clear: both;
+}
+
+.slick-list {
+	width: 325px;
+	display: block;
+	float: left;
+}
+
+.slick-arrow {
+	width: 30px;
+	display: block;
+	float: left;
+}
+
+/* 시간 선택 */
+.choose_time {
+	height: 520px;
+	padding-left: 20px;
+	padding-top: 30px;
+}
+
+/* 선택 중인 영화 제목 */
+.chosen_film {
+	padding-bottom: 20px;
+}
+
+/* 상영시간 버튼 */
+.choose_time li {
+	display: inline-block;
+	width: 100px;
+	border: 1px solid #424242;
+	text-align: center;
+	margin-bottom: 10px;
+	margin-right: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.choose_time li:hover {
+	cursor: pointer;
+	background-color: #eee;
+}
+
+.start_time {
+    font-weight: bold;
+}
+
+.seats {
+    font-size: 11px;
+}
+
+.room_no {
+    font-size: 11px;
+}
+
+/* 하단 버튼 영역 */
+.button_area {
+	height: 130px;
+}
+
+/* 좌석선택 버튼 */
+.go_to_next {
+	width: 130px;
+	height: 130px;
+	display: block;
+	float: right;
+	text-align: center;
+	font-size: 23px;
+	font-weight: bold;
+	box-shadow: none;
+	border: none;
+	
+	/* 비활성화 상태  */
+	cursor: default;
+	background-color: #eee;
+	color: #888;
+	
+}
+
+/* 활성화 상태 */
+.go_to_next.active {
+	cursor: pointer;
+	background-color: #4d4d4d;
+	color: #fff;
+	text-decoration: none;
+}
+
+.go_to_next:focus {
+	outline: none;
+}
+
+.go_to_next .fas {
+	font-size: 40px;
+}
+
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+
+/* 로그인 modal */
+.modal {
+	z-index: 100000000 !important;
+}
+
+.modal-title:hover, .modal-msg:hover {
+	cursor: default;
+}
+
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+
+/* float 마감제 */
+.clear {
+	content: '';
+	display: block;
+	float: none;
+	clear: both;
+}
